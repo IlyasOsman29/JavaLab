@@ -1,0 +1,1 @@
+package app; import api.HelloService; import java.util.ServiceLoader; public class Main { public static void main(String[] a){ServiceLoader.load(HelloService.class).forEach(s->System.out.println(s.message()));} }

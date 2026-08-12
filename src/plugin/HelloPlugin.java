@@ -1,0 +1,1 @@
+package plugin; import api.HelloService; public class HelloPlugin implements HelloService { public String message(){return "ServiceLoader component found";} }
