@@ -1,1 +1,0 @@
-package api; public interface HelloService { String message(); }

@@ -1,0 +1,1 @@
+package api;public interface IEntityProcessingService{void process(GameData d,double dt);String name();}

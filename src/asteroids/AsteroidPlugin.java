@@ -1,0 +1,1 @@
+package asteroids;import api.*;public final class AsteroidPlugin implements IGamePluginService,IEntityProcessingService{public String name(){return"Asteroids";}public void start(GameData d){d.entities.add(new Entity("ASTEROID",100));}public void process(GameData d,double dt){d.entities.stream().filter(e->e.type.equals("ASTEROID")).forEach(e->e.x-=4*dt);}}

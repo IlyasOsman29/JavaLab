@@ -1,0 +1,1 @@
+package api;public final class Entity{public final String type;public double x;public Entity(String t,double x){type=t;this.x=x;}}

@@ -1,0 +1,1 @@
+package player;import api.*;public final class PlayerPlugin implements IGamePluginService,IEntityProcessingService{public String name(){return"Player";}public void start(GameData d){d.entities.add(new Entity("PLAYER",0));}public void process(GameData d,double dt){d.entities.stream().filter(e->e.type.equals("PLAYER")).forEach(e->e.x+=10*dt);}}

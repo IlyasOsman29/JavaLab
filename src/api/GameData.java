@@ -1,0 +1,1 @@
+package api;import java.util.*;public final class GameData{public final List<Entity> entities=new ArrayList<>();}

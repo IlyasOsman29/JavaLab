@@ -1,2 +1,2 @@
 # JavaLab
-Demonstrates Java `ServiceLoader` as a whiteboard-style component model. Run `./build.sh`.
+Uses Java `ServiceLoader` to assemble Player and Asteroid components of a small Asteroids model automatically. No concrete plugin is constructed by Core. Run `./build.sh`.
