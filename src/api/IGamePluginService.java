@@ -1,1 +1,6 @@
-package api;public interface IGamePluginService{void start(GameData d);String name();}
+package api;
+
+public interface IGamePluginService {
+    void start(GameData gameData);
+    String name();
+}

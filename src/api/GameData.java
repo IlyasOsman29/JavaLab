@@ -1,1 +1,9 @@
-package api;import java.util.*;public final class GameData{public final List<Entity> entities=new ArrayList<>();}
+package api;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public final class GameData {
+    private final List<Entity> entities = new ArrayList<>();
+    public List<Entity> entities() { return entities; }
+}

@@ -1,1 +1,6 @@
-package api;public interface IEntityProcessingService{void process(GameData d,double dt);String name();}
+package api;
+
+public interface IEntityProcessingService {
+    void process(GameData gameData, double deltaSeconds);
+    String name();
+}
