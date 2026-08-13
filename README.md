@@ -1,28 +1,16 @@
-# JavaLab - ServiceLoader whiteboard model
+# JavaLab
 
-This command-line Asteroids model shows Java SE's built-in `ServiceLoader` without JPMS. Core knows only the service interfaces in `api`; it never imports or constructs Player, Enemy or Asteroids provider classes.
+This lab uses Java's `ServiceLoader` to find game components.
 
-The whiteboard roles are:
+`PlayerPlugin`, `EnemyPlugin` and `AsteroidPlugin` implement the two service interfaces in `api`. Their class names are registered in `resources/META-INF/services`. The `Main` class only uses the interfaces, so it does not create the plugins directly.
 
-- **Provider:** `PlayerPlugin`, `EnemyPlugin` and `AsteroidPlugin` implement the service contracts.
-- **Registration:** provider class names are listed in `resources/META-INF/services/api.IGamePluginService` and `api.IEntityProcessingService`.
-- **Consumer:** `app.Main` asks `ServiceLoader` for all registered implementations.
-- **Discovery:** Java reads the registration files from the runtime class path and constructs providers.
+## Run
 
-Adding another component therefore requires a provider and registration entry, not an edit to Core. This removes direct compile-time coupling from the consumer to concrete components.
+Requirements: JDK 21 and Maven.
 
-## Deterministic smoke run
-
-JDK 21 is recommended (the source is compatible with JDK 17+).
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\build.ps1
+```text
+mvn clean verify
+mvn exec:java
 ```
 
-or on Linux/macOS/Git Bash:
-
-```bash
-./build.sh
-```
-
-The command compiles once, copies the standard registration files and prints the sorted discovered component names followed by their updated entities.
+The test checks that all three plugins are found. The console program starts them, runs one update and prints the entities.
